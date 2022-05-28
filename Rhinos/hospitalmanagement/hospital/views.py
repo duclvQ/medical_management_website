@@ -426,6 +426,8 @@ def delete_appointment_view(request, pk):
 # ---------------------------------------------------------------------------------
 # ------------------------ Kết thúc hiển thị và chức năng dành cho bác sĩ ------------------------------
 # ---------------------------------------------------------------------------------
+
+# =================================== Danh mục hàm cho bệnh nhân==============================
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
 def patient_dashboard_view(request):
@@ -482,8 +484,7 @@ def patient_view_appointment_view(request):
     return render(request, 'hospital/patient_view_appointment.html', {'appointments': appointments, 'patient': patient})
 
 
-
-
-
-
+# ---------------------------------------------------------------------------------
+# ------------------------ Kết thúc hiển thị và chức năng dành cho bệnh nhân ------------------------------
+# ---------------------------------------------------------------------------------
 
