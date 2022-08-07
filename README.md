@@ -1,2 +1,2 @@
 # medical_management_website
-Hello, welcome to our project
+welcome to our project
