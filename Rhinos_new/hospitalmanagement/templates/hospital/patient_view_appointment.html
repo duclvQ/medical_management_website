@@ -32,7 +32,8 @@
         <tr>
           <th>Tên bác sĩ</th>
           <th>Miêu tả</th>
-          <th>Ngày</th>
+          <th>Ngày đăng kí</th>
+          <th>Ngày hẹn</th>
           <th>Trạng thái</th>
         </tr>
       </thead>
@@ -41,6 +42,7 @@
         <td> {{a.doctorName}}</td>
         <td>{{a.description}}</td>
         <td>{{a.appointmentDate}}</td>
+        <td>{{a.initDate}}</td>
         {%if a.status%}
         <td> <span class="label label-primary">Đã xác nhận</span></td>
         {% else %}

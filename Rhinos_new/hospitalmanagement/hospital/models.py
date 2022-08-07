@@ -3,19 +3,19 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-departments=[('Cardiologist','Cardiologist'),
-('Dermatologists','Dermatologists'),
-('Emergency Medicine Specialists','Emergency Medicine Specialists'),
-('Allergists/Immunologists','Allergists/Immunologists'),
-('Anesthesiologists','Anesthesiologists'),
-('Colon and Rectal Surgeons','Colon and Rectal Surgeons')
+departments=[('Khoa','Khoa'),
+('Khoa Nhi','Khoa Nhi'),
+('Khoa Truyền nhiễm','Khoa Truyền nhiễm'),
+('Khoa Cấp cứu','Khoa Cấp cứu'),
+('Khoa Y học Hạt nhân','Khoa Y học Hạt nhân'),
+('Khoa Hồi sức tích cực và chống độc','Khoa Hồi sức tích cực và chống độc')
 ]
 class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     profile_pic= models.ImageField(upload_to='profile_pic/DoctorProfilePic/',null=True,blank=True)
     address = models.CharField(max_length=40)
     mobile = models.CharField(max_length=20,null=True)
-    department= models.CharField(max_length=50,choices=departments,default='Cardiologist')
+    department= models.CharField(max_length=50,choices=departments,default='Khoa')
     status=models.BooleanField(default=False)
     @property
     def get_name(self):
@@ -52,7 +52,9 @@ class Appointment(models.Model):
     doctorId=models.PositiveIntegerField(null=True)
     patientName=models.CharField(max_length=40,null=True)
     doctorName=models.CharField(max_length=40,null=True)
-    appointmentDate=models.DateField(auto_now=True)
+    appointmentDate=models.DateField(editable=True)
+    
+    initDate=models.DateField()
     description=models.TextField(max_length=500)
     status=models.BooleanField(default=False)
 
