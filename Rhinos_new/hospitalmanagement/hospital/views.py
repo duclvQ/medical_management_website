@@ -13,28 +13,28 @@ from django.db.models import Q
 
 
 @csrf_exempt
-# Tạo hiển thị ở đấy nhé =)
+# Tạo hiển thị 
 def home_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
     return render(request, 'hospital/index.html')
 
 
-# Khi ấn Admin trên thanh navbar sẽ hiển thị chức năng đăng kí, và nhớ nộp nhé!
+# Khi ấn Admin trên thanh sẽ hiển thị chức năng đăng kí, và nhớ nộp nhé!
 def adminclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
     return render(request, 'hospital/adminclick.html')
 
 
-# Khi ấn Bác sĩ trên thanh navbar sẽ hiển thị chức năng đăng kí, và nhớ nộp nhé!
+# Khi ấn Bác sĩ trên thanh sẽ hiển thị chức năng đăng kí, và nhớ nộp nhé!
 def doctorclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
     return render(request, 'hospital/doctorclick.html')
 
 
-# Khi ấn Bệnh nhân trên thanh navbar sẽ hiển thị chức năng đăng kí, và nhớ nộp nhé!
+# Khi ấn Bệnh nhân trên thanh sẽ hiển thị chức năng đăng kí, và nhớ nộp nhé!
 def patientclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
@@ -495,7 +495,7 @@ def reject_appointment_view(request, pk):
 
 
 # ---------------------------------------------------------------------------------
-# ------------------------ Kết thức chức năng hiển thị và thực hiện của Admin ------------------------------
+# ------------------------ Kết thúc chức năng hiển thị và thực hiện của Admin ------------------------------
 # ---------------------------------------------------------------------------------
 
 
